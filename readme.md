@@ -125,22 +125,5 @@ Modify colors and theme easily via **CSS variables**:
   ...
 }
 ```
-
----
-
-## 🤝 Contributing
-
-Got improvements or ideas?  
-Feel free to fork this project and create a pull request.  
-All contributions are welcome!
-
----
-
-## 📄 License
-
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
-
----
-
 **Enjoy organizing your life with this Modern To-Do List!**  
 ✨ _Clean UI. Smart Features. Fully Offline._
