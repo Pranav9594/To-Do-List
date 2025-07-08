@@ -36,15 +36,13 @@ A sleek, feature-rich to-do list application built with **HTML**, **CSS**, and *
 
 ## 📁 File Structure
 
+```
 To-Do-List/
-├── index.html # Main HTML layout
-├── styles.css # All styling including themes
-├── script.js # Application logic
-└── README.md # Project documentation
-
-yaml
-Copy
-Edit
+├── index.html       # Main HTML layout
+├── styles.css       # All styling including themes
+├── script.js        # Application logic
+└── README.md        # Project documentation
+```
 
 ---
 
@@ -59,55 +57,63 @@ Edit
 1. **Clone** the repository or **download** the ZIP  
    ```bash
    git clone https://github.com/Pranav9594/To-Do-List.git
-Open the index.html file in your browser
+   ```
+2. **Open** the `index.html` file in your browser  
+3. **Start managing your tasks!**
 
-Start managing your tasks!
+---
 
-📚 How to Use
-Action	How To
-➕ Add Task	Type into the input and press Enter or click "+"
-☑️ Complete Task	Click the checkbox next to the task
-✏️ Edit Task	Click the pencil icon next to the task
-🗑️ Delete Task	Click the trash icon
-🔍 Filter Tasks	Use All / Active / Completed filters
-🔄 Reorder Tasks	Drag and drop the tasks to rearrange them
-🌗 Theme Toggle	Click the sun/moon icon to switch themes
-🧹 Clear Completed	Click "Clear Completed" to delete all completed tasks
+## 📚 How to Use
 
-🎨 Theme System
-Light Mode – Bright and minimal interface
+| Action              | How To                                                                 |
+|---------------------|------------------------------------------------------------------------|
+| ➕ Add Task          | Type into the input and press Enter or click "+"                       |
+| ☑️ Complete Task     | Click the checkbox next to the task                                   |
+| ✏️ Edit Task         | Click the pencil icon next to the task                                |
+| 🗑️ Delete Task       | Click the trash icon                                                   |
+| 🔍 Filter Tasks      | Use All / Active / Completed filters                                   |
+| 🔄 Reorder Tasks     | Drag and drop the tasks to rearrange them                             |
+| 🌗 Theme Toggle      | Click the sun/moon icon to switch themes                              |
+| 🧹 Clear Completed   | Click "Clear Completed" to delete all completed tasks                 |
 
-Dark Mode – Comfortable in low-light environments
+---
 
-Persistent – Theme preference saved across sessions
+## 🎨 Theme System
 
-🧠 Smart Drag & Drop
-Easy reordering with intuitive drag indicators
+- **Light Mode** – Bright and minimal interface  
+- **Dark Mode** – Comfortable in low-light environments  
+- **Persistent** – Theme preference saved across sessions  
 
-Visual drop zones
+---
 
-Order saved automatically after drag
+## 🧠 Smart Drag & Drop
 
-💾 Data Persistence
-Tasks saved in localStorage – no server or login required
+- Easy reordering with intuitive drag indicators  
+- Visual drop zones  
+- Order saved automatically after drag  
 
-Theme preference stored as well
+---
 
-All data auto-loaded on page refresh
+## 💾 Data Persistence
 
-♿ Accessibility
-ARIA labels for screen readers
+- Tasks saved in `localStorage` – no server or login required  
+- Theme preference stored as well  
+- All data auto-loaded on page refresh  
 
-Full keyboard navigation
+---
 
-High-contrast support for readability
+## ♿ Accessibility
 
-🛠️ Customization
-Modify colors and theme easily via CSS variables:
+- ARIA labels for screen readers  
+- Full keyboard navigation  
+- High-contrast support for readability  
 
-css
-Copy
-Edit
+---
+
+## 🛠️ Customization
+
+Modify colors and theme easily via **CSS variables**:
+```css
 :root {
   --primary-color: #0d6efd;
   --background-color: #ffffff;
@@ -118,3 +124,23 @@ Edit
   --background-color: #121212;
   ...
 }
+```
+
+---
+
+## 🤝 Contributing
+
+Got improvements or ideas?  
+Feel free to fork this project and create a pull request.  
+All contributions are welcome!
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+
+---
+
+**Enjoy organizing your life with this Modern To-Do List!**  
+✨ _Clean UI. Smart Features. Fully Offline._
