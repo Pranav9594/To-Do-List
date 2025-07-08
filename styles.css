@@ -1,0 +1,343 @@
+:root {
+    /* Light theme variables */
+    --bg-color: #f5f5f5;
+    --card-bg: #ffffff;
+    --text-color: #333333;
+    --border-color: #e0e0e0;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --accent-color: #4a6ee0;
+    --completed-color: #888888;
+    --hover-color: #f0f0f0;
+    --button-hover: #e9ecfb;
+    --delete-color: #ff6b6b;
+    --checkbox-bg: #ffffff;
+    --checkbox-border: #d1d1d1;
+}
+
+.dark-theme {
+    /* Dark theme variables */
+    --bg-color: #1a1a2e;
+    --card-bg: #16213e;
+    --text-color: #e6e6e6;
+    --border-color: #2c3e50;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --accent-color: #4a6ee0;
+    --completed-color: #6c757d;
+    --hover-color: #1e2a3a;
+    --button-hover: #2a3950;
+    --delete-color: #e74c3c;
+    --checkbox-bg: #2c3e50;
+    --checkbox-border: #4a6ee0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    cursor: default;
+}
+
+.container {
+    width: 100%;
+    max-width: 550px;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px var(--shadow-color);
+    overflow: hidden;
+    padding: 24px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+#theme-toggle {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+#theme-toggle:hover {
+    background-color: var(--button-hover);
+    transform: rotate(15deg);
+}
+
+.todo-input-container {
+    display: flex;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#todo-input {
+    flex: 1;
+    padding: 16px;
+    border: none;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    font-size: 16px;
+    outline: none;
+    border: 1px solid var(--border-color);
+    border-right: none;
+    border-radius: 8px 0 0 8px;
+}
+
+#add-button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0 20px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+#add-button:hover {
+    background-color: #3a5bc7;
+}
+
+.filter-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.filter-btn {
+    background: none;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 20px;
+    color: var(--text-color);
+    transition: all 0.3s;
+}
+
+.filter-btn:hover {
+    background-color: var(--button-hover);
+}
+
+.filter-btn.active {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.todo-list {
+    list-style-type: none;
+    margin-bottom: 20px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    border-bottom: 1px solid var(--border-color);
+    animation: fadeIn 0.3s ease;
+    cursor: grab;
+    transition: background-color 0.2s;
+}
+
+.todo-item:hover {
+    background-color: var(--hover-color);
+}
+
+.todo-item.dragging {
+    opacity: 0.5;
+    background-color: var(--hover-color);
+}
+
+.todo-content {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.todo-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: 2px solid var(--checkbox-border);
+    background-color: var(--checkbox-bg);
+    margin-right: 12px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.todo-checkbox:checked {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.todo-checkbox:checked::after {
+    content: '✓';
+    position: absolute;
+    color: white;
+    font-size: 14px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.todo-text {
+    font-size: 16px;
+    word-break: break-word;
+    transition: all 0.3s;
+}
+
+.todo-item.completed .todo-text {
+    text-decoration: line-through;
+    color: var(--completed-color);
+}
+
+.todo-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.edit-btn, .delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.edit-btn {
+    color: var(--accent-color);
+}
+
+.delete-btn {
+    color: var(--delete-color);
+}
+
+.edit-btn:hover, .delete-btn:hover {
+    background-color: var(--button-hover);
+    transform: scale(1.1);
+}
+
+.todo-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: var(--completed-color);
+}
+
+#clear-completed {
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+#clear-completed:hover {
+    text-decoration: underline;
+}
+
+.editing-input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(10px); }
+}
+
+.fade-out {
+    animation: fadeOut 0.3s ease forwards;
+}
+
+/* Custom cursor */
+.todo-item {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%234a6ee0' d='M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z'/%3E%3C/svg%3E") 12 12, grab;
+}
+
+.todo-item:active {
+    cursor: grabbing;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .container {
+        padding: 16px;
+        border-radius: 8px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+    
+    .todo-item {
+        padding: 12px;
+    }
+    
+    .filter-container {
+        flex-wrap: wrap;
+    }
+}
+
+/* Scrollbar styling */
+.todo-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.todo-list::-webkit-scrollbar-track {
+    background: var(--bg-color);
+    border-radius: 10px;
+}
+
+.todo-list::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 10px;
+}
+
+.todo-list::-webkit-scrollbar-thumb:hover {
+    background: #3a5bc7;
+}
