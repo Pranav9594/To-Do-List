@@ -123,6 +123,7 @@ Modify colors and theme easily via **CSS variables**:
 
 .dark-theme {
   --background-color: #121212;
+---
   ...
 }
 ```
