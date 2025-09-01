@@ -274,22 +274,3 @@ To-Do-List/
 ---
 
 ## 🛠️ Customization
-
-Modify colors and theme easily via **CSS variables**:
-```css
-:root {
-  --primary-color: #0d6efd;
-  --background-color: #ffffff;
-  ...
-}
-
-.dark-theme {
-  --background-color: #121212;
----
-  ...
-}
-```
-**Enjoy organizing your life with this Modern To-Do List!**  .
-✨ _Clean UI. Smart Features. Fully Offline._
----
-
