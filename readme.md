@@ -146,8 +146,4 @@ Modify colors and theme easily via **CSS variables**:
 
 
 
-
-
-
-
-
+;
