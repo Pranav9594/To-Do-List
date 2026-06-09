@@ -127,10 +127,7 @@ Modify colors and theme easily via **CSS variables**:
   ...
 }
 ```
-*Enjoy organizing your life with this Modern To-Do List!**  .
-✨ _Clean UI. Smart Features. Fully Offline._
----
-}
+
 
 
 
